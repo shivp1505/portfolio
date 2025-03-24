@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shiv's Portfolio</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+ 
+  <!-- Navigation -->
+<nav class="navbar">
+    <div class="container">
+      
+      <!-- Left Side: Profile + Name -->
+      <div class="logo-group">
+        <img src="assets/profile.jpg" alt="Profile" class="navbar-profile" />
+        <a href="#" class="logo">Shiv Patel</a>
+      </div>
+      
+      <!-- Mobile toggle -->
+      <div class="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      
+      <!-- Right Side: Navigation links -->
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+  
+    </div>
+  </nav>
+  
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Hello, I'm Shiv</h1>
+        <p class="hero-subtitle">Machine Learning and Digital Security Enthusiast</p>
+        <a href="#projects" class="hero-btn">View My Work</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-title">
+        <h1>About Me</h1>
+      </div>
+      <div class="about-grid">
+        <div class="about-content">
+          <h2>Who I Am</h2>
+          I'm a Sophomore at <span class="highlight-rutgers">Rutgers University</span> currently studying 
+          <span class="highlight-major">Computer Science</span> and 
+          <span class="highlight-major">Cognitive Science</span>.
+          
+          <p>When I'm not 
+            <span class="highlight-coding">coding</span>, you can find me playing 
+            <span class="highlight-hobbies">video games</span> and 
+            <span class="highlight-hobbies">watching shows.</span> I also enjoy learning about 
+            <span class="highlight-topics">history</span> and 
+            <span class="highlight-topics">philosophy</span>.</p> 
+        </div>
+        </div>
+      </div>
+    </div>
+</section> <!-- end of About section -->
+
+  
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-title">
+        <h1>My Projects</h1>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("2aZmHPJmI4-JKc-s1"); // Replace with your public key
+    })();
+  
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      emailjs.sendForm("service_8582tpp","template_tonxzab", this)
+        .then(() => {
+          alert("✅ Message sent successfully!");
+          this.reset(); // optional: reset form
+        })
+        .catch((error) => {
+          console.error("❌ Failed to send email:", error);
+          alert("Oops! Something went wrong. Try again later.");
+        });
+    });
+  </script>
+  
+  <!-- Contact -->
+
+  <div id="contactModal" class="modal-overlay">
+    <div class="modal-box">
+      <span class="close-modal">&times;</span>
+      <h2>Contact Me</h2>
+  
+      <form id="contactForm" class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+        </div>
+  
+        <div class="form-group full-width">
+          <label for="title">Subject</label>
+          <input type="text" id="title" name="title" placeholder="e.g. Portfolio Feedback" required />
+        </div>
+  
+        <div class="form-group full-width">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+  
+        <button type="submit" class="submit-btn">Send Message</button>
+  
+        <p class="contact-note">
+          Or connect with me on
+          <a href="https://www.linkedin.com/in/shiv-patel-403916206/" target="_blank">LinkedIn</a>
+        </p>
+      </form>
+    </div>
+  </div>
+  
+  
+   <!-- Footer -->
+
+   <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-text">© 2025 Shiv Patel</p>
+      <div class="badge">🚧 Still improving this portfolio — thanks for visiting!</div>
+    </div>
+  </footer>
+  
+
+
+</body>
+</html>
